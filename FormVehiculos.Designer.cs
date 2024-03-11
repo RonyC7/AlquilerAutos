@@ -56,12 +56,14 @@
             // 
             // buttonGuardarVehiculo
             // 
+            this.buttonGuardarVehiculo.BackColor = System.Drawing.Color.Turquoise;
             this.buttonGuardarVehiculo.Location = new System.Drawing.Point(607, 130);
             this.buttonGuardarVehiculo.Name = "buttonGuardarVehiculo";
             this.buttonGuardarVehiculo.Size = new System.Drawing.Size(114, 54);
             this.buttonGuardarVehiculo.TabIndex = 1;
             this.buttonGuardarVehiculo.Text = "Guardar Vehiculo";
-            this.buttonGuardarVehiculo.UseVisualStyleBackColor = true;
+            this.buttonGuardarVehiculo.UseVisualStyleBackColor = false;
+            this.buttonGuardarVehiculo.Click += new System.EventHandler(this.buttonGuardarVehiculo_Click);
             // 
             // label1
             // 
@@ -147,6 +149,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(748, 283);
             this.Controls.Add(this.textBoxPrecioKilometro);
             this.Controls.Add(this.textBoxColor);

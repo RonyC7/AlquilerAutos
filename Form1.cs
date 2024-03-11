@@ -12,6 +12,8 @@ namespace AlquilerAutos
 {
     public partial class Form1 : Form
     {
+        private FormCliente formCliente;
+        private FormVehiculos formVehiculos;
         public Form1()
         {
             InitializeComponent();
@@ -33,6 +35,11 @@ namespace AlquilerAutos
         {
             FormAlquiler formAlquiler = new FormAlquiler();
             formAlquiler.ShowDialog();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -52,12 +52,14 @@
             // 
             // buttonGuardarCliente
             // 
+            this.buttonGuardarCliente.BackColor = System.Drawing.Color.Turquoise;
             this.buttonGuardarCliente.Location = new System.Drawing.Point(611, 103);
             this.buttonGuardarCliente.Name = "buttonGuardarCliente";
             this.buttonGuardarCliente.Size = new System.Drawing.Size(113, 49);
             this.buttonGuardarCliente.TabIndex = 1;
             this.buttonGuardarCliente.Text = "Guardar Cliente";
-            this.buttonGuardarCliente.UseVisualStyleBackColor = true;
+            this.buttonGuardarCliente.UseVisualStyleBackColor = false;
+            this.buttonGuardarCliente.Click += new System.EventHandler(this.buttonGuardarCliente_Click);
             // 
             // label1
             // 
@@ -111,6 +113,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(750, 233);
             this.Controls.Add(this.textBoxNit);
             this.Controls.Add(this.textBoxDireccionCliente);

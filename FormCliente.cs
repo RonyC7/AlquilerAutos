@@ -15,12 +15,31 @@ namespace AlquilerAutos
         public FormCliente()
         {
             InitializeComponent();
+
         }
+        public event EventHandler ClienteGuardado;
 
         private void button1_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1();
-            form1.Show();
+            this.Close();
+        }
+
+        private void buttonGuardarCliente_Click(object sender, EventArgs e)
+        {
+            string nombre = textBoxNombreCliente.Text;
+            string direccion = textBoxDireccionCliente.Text;
+            string nit = textBoxNit.Text;
+
+            // Verificar si el cliente ya existe en el diccionario
+            if (!RepositorioDatos.ClientesVehiculosAlquilados.ContainsKey(nit))
+            {
+                // Agregar el cliente al diccionario con una lista vacía de placas
+                RepositorioDatos.ClientesVehiculosAlquilados.Add(nit, new List<string>());
+            }
+
+            MessageBox.Show("Cliente guardado", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            ClienteGuardado?.Invoke(this, EventArgs.Empty);
         }
     }
 }

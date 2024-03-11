@@ -122,12 +122,14 @@
             // 
             // buttonGuardarAlqui
             // 
+            this.buttonGuardarAlqui.BackColor = System.Drawing.Color.Turquoise;
             this.buttonGuardarAlqui.Location = new System.Drawing.Point(524, 144);
             this.buttonGuardarAlqui.Name = "buttonGuardarAlqui";
             this.buttonGuardarAlqui.Size = new System.Drawing.Size(118, 51);
             this.buttonGuardarAlqui.TabIndex = 11;
             this.buttonGuardarAlqui.Text = "Guardar Alquiler";
-            this.buttonGuardarAlqui.UseVisualStyleBackColor = true;
+            this.buttonGuardarAlqui.UseVisualStyleBackColor = false;
+            this.buttonGuardarAlqui.Click += new System.EventHandler(this.buttonGuardarAlqui_Click);
             // 
             // comboBoxNit
             // 
@@ -149,6 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(669, 319);
             this.Controls.Add(this.comboBoxPlaca);
             this.Controls.Add(this.comboBoxNit);
