@@ -16,5 +16,23 @@ namespace AlquilerAutos
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormCliente formCliente = new FormCliente();
+            formCliente.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FormVehiculos formVehiculos = new FormVehiculos();
+            formVehiculos.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            FormAlquiler formAlquiler = new FormAlquiler();
+            formAlquiler.ShowDialog();
+        }
     }
 }
