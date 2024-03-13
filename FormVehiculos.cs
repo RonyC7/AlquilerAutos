@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AlquilerAutos
@@ -38,17 +33,48 @@ namespace AlquilerAutos
                 MessageBox.Show("Por favor ingrese un precio válido para el kilometro.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            // Agregar la placa del vehículo al diccionario de clientes y vehículos alquilados
+            if (PlacaExistente(placa))
+            {
+                MessageBox.Show("La placa ya existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;  
+            }
             foreach (var cliente in RepositorioDatos.ClientesVehiculosAlquilados.Keys)
             {
                 RepositorioDatos.ClientesVehiculosAlquilados[cliente].Add(placa);
-                break; // Solo necesitamos agregar la placa para un cliente, asumiendo que un vehículo solo se alquila a un cliente
+                break; 
             }
+
+            GuardarVehiculoEnArchivo(placa, marca, modelo, color, precioPorKilometro);
 
             MessageBox.Show("Vehículo Guardado", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             VehiculoGuardado?.Invoke(this, EventArgs.Empty);
+        }
 
+        private bool PlacaExistente(string placa)
+        {
+            foreach (var cliente in RepositorioDatos.ClientesVehiculosAlquilados.Values)
+            {
+                if (cliente.Contains(placa))
+                {
+                    return true; 
+                }
+            }
+            return false; 
+        }
+
+        private void GuardarVehiculoEnArchivo(string placa, string marca, string modelo, string color, decimal precioPorKilometro)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter("vehiculos.txt", true))
+                {
+                    writer.WriteLine($"{placa},{marca},{modelo},{color},{precioPorKilometro}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar el vehículo en el archivo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

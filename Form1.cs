@@ -12,8 +12,6 @@ namespace AlquilerAutos
 {
     public partial class Form1 : Form
     {
-        private FormCliente formCliente;
-        private FormVehiculos formVehiculos;
         public Form1()
         {
             InitializeComponent();

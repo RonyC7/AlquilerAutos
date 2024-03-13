@@ -1,11 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AlquilerAutos
@@ -15,8 +10,8 @@ namespace AlquilerAutos
         public FormCliente()
         {
             InitializeComponent();
-
         }
+
         public event EventHandler ClienteGuardado;
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,15 +26,33 @@ namespace AlquilerAutos
             string direccion = textBoxDireccionCliente.Text;
             string nit = textBoxNit.Text;
 
-            // Verificar si el cliente ya existe en el diccionario
-            if (!RepositorioDatos.ClientesVehiculosAlquilados.ContainsKey(nit))
+            if (RepositorioDatos.ClientesVehiculosAlquilados.ContainsKey(nit))
             {
-                // Agregar el cliente al diccionario con una lista vacía de placas
-                RepositorioDatos.ClientesVehiculosAlquilados.Add(nit, new List<string>());
+                MessageBox.Show("El cliente ya existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
+
+            RepositorioDatos.ClientesVehiculosAlquilados.Add(nit, new List<string>());
+
+            GuardarClienteEnArchivo(nombre, direccion, nit);
 
             MessageBox.Show("Cliente guardado", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
             ClienteGuardado?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void GuardarClienteEnArchivo(string nombre, string direccion, string nit)
+        {
+            try
+            {
+                using (StreamWriter writer = new StreamWriter("clientes.txt", true))
+                {
+                    writer.WriteLine($"{nombre},{direccion},{nit}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar el cliente en el archivo: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
