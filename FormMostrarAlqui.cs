@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Data;
+using System.IO;
 using System.Windows.Forms;
 
 namespace AlquilerAutos
@@ -20,9 +20,26 @@ namespace AlquilerAutos
 
         private void CargarDatosAlquiler()
         {
-            // Aquí cargarías los datos de alquiler desde algún lugar y los mostrarías en el DataGridView
-            // Por ahora, solo se muestra un mensaje
-            MessageBox.Show("Cargar datos de alquiler desde algún lugar y mostrarlos en el DataGridView.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                dataGridViewAlquiler.Rows.Clear();
+
+                string[] lineas = File.ReadAllLines("alquileres.txt");
+
+                foreach (string linea in lineas)
+                {
+                    string[] campos = linea.Split(',');
+
+                    if (campos.Length == 5)
+                    {
+                        dataGridViewAlquiler.Rows.Add(campos);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al cargar los datos de alquiler: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
