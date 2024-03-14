@@ -50,18 +50,19 @@
             // dataGridViewAlquiler
             // 
             this.dataGridViewAlquiler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAlquiler.Location = new System.Drawing.Point(13, 54);
+            this.dataGridViewAlquiler.Location = new System.Drawing.Point(12, 95);
             this.dataGridViewAlquiler.Name = "dataGridViewAlquiler";
             this.dataGridViewAlquiler.RowHeadersWidth = 51;
             this.dataGridViewAlquiler.RowTemplate.Height = 24;
-            this.dataGridViewAlquiler.Size = new System.Drawing.Size(780, 150);
+            this.dataGridViewAlquiler.Size = new System.Drawing.Size(896, 187);
             this.dataGridViewAlquiler.TabIndex = 1;
+            this.dataGridViewAlquiler.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAlquiler_CellContentClick);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(817, 54);
+            this.label1.Location = new System.Drawing.Point(159, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(239, 20);
             this.label1.TabIndex = 2;
@@ -70,7 +71,7 @@
             // labelAlquiAlto
             // 
             this.labelAlquiAlto.AutoSize = true;
-            this.labelAlquiAlto.Location = new System.Drawing.Point(818, 95);
+            this.labelAlquiAlto.Location = new System.Drawing.Point(160, 60);
             this.labelAlquiAlto.Name = "labelAlquiAlto";
             this.labelAlquiAlto.Size = new System.Drawing.Size(44, 16);
             this.labelAlquiAlto.TabIndex = 3;
@@ -81,7 +82,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
-            this.ClientSize = new System.Drawing.Size(1089, 260);
+            this.ClientSize = new System.Drawing.Size(920, 294);
             this.Controls.Add(this.labelAlquiAlto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewAlquiler);
