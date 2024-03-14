@@ -32,7 +32,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewAlquiler = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.labelAlquiAlto = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewAlquiler)).BeginInit();
             this.SuspendLayout();
             // 
@@ -67,14 +67,14 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Valor mas alto de recorrido";
             // 
-            // label2
+            // labelAlquiAlto
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(818, 95);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "label2";
+            this.labelAlquiAlto.AutoSize = true;
+            this.labelAlquiAlto.Location = new System.Drawing.Point(818, 95);
+            this.labelAlquiAlto.Name = "labelAlquiAlto";
+            this.labelAlquiAlto.Size = new System.Drawing.Size(44, 16);
+            this.labelAlquiAlto.TabIndex = 3;
+            this.labelAlquiAlto.Text = "label2";
             // 
             // FormMostrarAlqui
             // 
@@ -82,7 +82,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightBlue;
             this.ClientSize = new System.Drawing.Size(1089, 260);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.labelAlquiAlto);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewAlquiler);
             this.Controls.Add(this.button1);
@@ -100,6 +100,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridViewAlquiler;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelAlquiAlto;
     }
 }
