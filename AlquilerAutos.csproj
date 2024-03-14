@@ -64,6 +64,24 @@
     <Compile Include="FormCliente.Designer.cs">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMostrarAlqui.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMostrarAlqui.Designer.cs">
+      <DependentUpon>FormMostrarAlqui.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMostrarCli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMostrarCli.Designer.cs">
+      <DependentUpon>FormMostrarCli.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMostrarVehi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMostrarVehi.Designer.cs">
+      <DependentUpon>FormMostrarVehi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +99,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMostrarAlqui.resx">
+      <DependentUpon>FormMostrarAlqui.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMostrarCli.resx">
+      <DependentUpon>FormMostrarCli.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMostrarVehi.resx">
+      <DependentUpon>FormMostrarVehi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormVehiculos.resx">
       <DependentUpon>FormVehiculos.cs</DependentUpon>

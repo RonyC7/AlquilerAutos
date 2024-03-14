@@ -36,12 +36,12 @@ namespace AlquilerAutos
             if (PlacaExistente(placa))
             {
                 MessageBox.Show("La placa ya existe.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;  
+                return;
             }
             foreach (var cliente in RepositorioDatos.ClientesVehiculosAlquilados.Keys)
             {
                 RepositorioDatos.ClientesVehiculosAlquilados[cliente].Add(placa);
-                break; 
+                break;
             }
 
             GuardarVehiculoEnArchivo(placa, marca, modelo, color, precioPorKilometro);
@@ -56,10 +56,10 @@ namespace AlquilerAutos
             {
                 if (cliente.Contains(placa))
                 {
-                    return true; 
+                    return true;
                 }
             }
-            return false; 
+            return false;
         }
 
         private void GuardarVehiculoEnArchivo(string placa, string marca, string modelo, string color, decimal precioPorKilometro)

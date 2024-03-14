@@ -39,5 +39,23 @@ namespace AlquilerAutos
         {
 
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            FormMostrarCli formMostrarCli = new FormMostrarCli();
+            formMostrarCli.ShowDialog();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            FormMostrarVehi formMostrarVehi = new FormMostrarVehi();
+            formMostrarVehi.ShowDialog();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            FormMostrarAlqui formMostrarAlqui = new FormMostrarAlqui();
+            formMostrarAlqui.ShowDialog();
+        }
     }
 }
